@@ -1,0 +1,57 @@
+#File
+    Prescence of a file corresponding to the name:
+        Present.
+        Not Present.                [error]
+#Input File
+    File Size:
+        empty.                      [error]
+        one line.                   
+        many lines.                 [property manylines]
+    File Content:
+        alphanumeric characters.             
+        includes special characters and spaces.         [property chars_spaces]                         
+        includes repeated characters.                   [property repeat]
+
+#Input -n Integer, shifts number vals for letters
+    -n Value:
+        empty.
+        not integer.                [error]
+        >=0.                        [if manylines]
+        <0.                         [error]
+        >25.                        [error]
+
+#Input -r or -l Integer, shifts position left or right
+    -r Value:
+        empty.                      [property emptyrval]
+        not integer.                [error]
+        <1.                         [error]
+        >=1.                        [if manylines && (chars_spaces || repeat)]
+        26.                         [single]
+        maxint.                     [single]
+    -l Value:
+        empty.                      [if emptyrval]
+        not integer.                [error]
+        <1.                         [error][if emptyrval]
+        >=1.                        [if manylines && emptyrval && (chars_spaces || repeat)]
+        26.                         [single][if emptyrval]
+        maxint.                     [single][if emptyrval]
+        
+#Input -c String, parses input string and reverses capitalization
+    -c Length of pattern:
+        empty.                      [property emptypattern]
+        one.                        [single]    
+        more than one.              [if manylines]
+        longer than file.           [single]
+    -c Content:
+        alphanumeric characters.    [if !emptypattern]
+        includes special characters and spaces.         [if !emptypattern][property specialchars]
+        repeat characters.          [if !emptypattern]
+        characters not in file.     [single][if !emptypattern]
+    -c Prescence of enclosing quotes:
+        not enclosed.               [error][if !emptypattern]
+        enclosed.                   [if !emptypattern]
+        incorrect.                  [error][if !emptypattern]
+    -c Prescence of quotes within the pattern:
+        none.                       [single][property !emptypattern]
+        one.                        [single][if !emptypattern && specialchars]
+        many.                       [single][if !emptypattern && specialchars]
