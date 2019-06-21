@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".LoginManagerActivity">
+
+    <TextView
+        android:id="@+id/Login_textView"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:contentDescription="Login Header"
+        android:text="Login"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:text="Login" />
+
+    <EditText
+        android:id="@+id/Username_inp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="82dp"
+        android:contentDescription="Username input text"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Username"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        tools:text="username" />
+
+    <Button
+        android:id="@+id/Reg_button"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="217dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:contentDescription="Register Button"
+        android:text="Register" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="187dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="172dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:contentDescription="Login Button"
+        android:text="Login" />
+
+</RelativeLayout>
